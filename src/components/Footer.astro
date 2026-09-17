@@ -1,0 +1,70 @@
+---
+import { t } from '../i18n/es';
+import { site } from '../data/site';
+import SocialLinks from './SocialLinks.astro';
+---
+
+<footer class="border-t border-white/10 bg-coal-950">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <a href="#inicio" class="flex items-center gap-3" aria-label={`${t.siteName} - inicio`}>
+        <img
+          src="/images/logo.jpg"
+          width="44"
+          height="44"
+          alt=""
+          loading="lazy"
+          class="h-11 w-11 rounded-full object-cover"
+        />
+        <span class="font-display text-xl tracking-wide uppercase">
+          Nono's <span class="text-yolk-400">Burgers</span>
+        </span>
+      </a>
+      <p class="mt-4 max-w-sm leading-relaxed text-white/60">{t.footer.tagline}</p>
+      <div class="mt-6">
+        <SocialLinks />
+      </div>
+    </div>
+
+    <nav aria-label="Navegación del pie">
+      <h2 class="mb-4 text-sm font-bold tracking-[0.18em] text-white/60 uppercase">{t.footer.navTitle}</h2>
+      <ul class="space-y-2.5">
+        {t.nav.map((item) => (
+          <li>
+            <a href={item.href} class="text-white/75 transition-colors hover:text-yolk-400">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="mb-4 text-sm font-bold tracking-[0.18em] text-white/60 uppercase">{t.footer.contactTitle}</h2>
+      <ul class="space-y-2.5 text-white/75">
+        {site.phones.map((phone) => (
+          <li>
+            <a href={phone.href} class="transition-colors hover:text-yolk-400">{phone.display}</a>
+          </li>
+        ))}
+        <li>
+          {site.address.street}, {site.address.postalCode} {site.address.locality} ({site.address.region})
+        </li>
+      </ul>
+      <h2 class="mt-8 mb-4 text-sm font-bold tracking-[0.18em] text-white/60 uppercase">{t.footer.legalTitle}</h2>
+      <ul class="space-y-2.5">
+        {t.footer.legal.map((item) => (
+          <li>
+            <a href={item.href} class="text-white/75 transition-colors hover:text-yolk-400">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <p class="mx-auto max-w-6xl px-4 py-6 text-sm text-white/50 sm:px-6">{t.footer.rights}</p>
+  </div>
+</footer>

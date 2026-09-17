@@ -1,0 +1,54 @@
+# AGENTS.md — Convenciones del proyecto Nono's Burgers
+
+## Stack
+- **Astro 5** + **TypeScript estricto** (`astro/tsconfigs/strict`) + **Tailwind CSS v4**
+  (vía `@tailwindcss/vite` en `astro.config.mjs`; sin `tailwind.config`, los tokens
+  viven en `@theme` dentro de `src/styles/global.css`).
+- Contenido 100 % estático, sin backend. Un solo idioma: **español**.
+
+## Estructura (no mover piezas de sitio)
+- `src/components/` → componentes Astro (Header, Hero, MenuSection, Faq, Contact, Footer…).
+- `src/pages/` → `index.astro`, `aviso-legal.astro`, `privacidad.astro`. Nuevas páginas
+  usan el componente `Layout` (SEO + cabecera + pie incluidos).
+- `src/data/` → contenido editable: `site.ts` (negocio), `menu.ts` (carta),
+  `reviews.ts`, `faq.ts`, `gallery.ts`.
+- `src/i18n/es.ts` → **todos** los textos de la interfaz. Prohibido hardcodear copy
+  en los componentes; el contenido largo vive en `src/data/`.
+- `src/scripts/main.ts` → único JS de cliente (menú móvil, pestañas, acordeón, scroll
+  de cabecera). Se carga desde `Layout` con `<script src="../scripts/main.ts">`.
+- `src/styles/global.css` → Tailwind + tokens `@theme` + estilos de estado
+  (`aria-selected`, acordeón, marquesina, foco visible).
+- `public/` → `robots.txt`, `sitemap.xml`, `favicon.svg`, `images/` (assets tal cual).
+
+## Idiomas y textos
+- Solo `es`. Si algún día se añade inglés: español en `/`, inglés en `/en/`
+  (`prefixDefaultLocale: false`) y `src/i18n/en.ts` con la misma forma que `es.ts`.
+
+## Diseño
+- Paleta: `coal-*` (negros), blanco, `yolk-400` `#ffc21a` (CTAs/titulares),
+  `leaf-400` `#3ddc84` (detalles secundarios). No introducir más colores de acento.
+- Tipos: `font-display` (Anton) solo en titulares/precios destacados; `font-sans`
+  (Inter) para el resto.
+- Iconos: SVG geométricos inline, nunca emojis. `aria-hidden="true"` en los
+  decorativos y `aria-label` en botones icónicos.
+
+## Accesibilidad (no romper)
+- Un `H1` por página; secciones con `aria-labelledby` al `id` del `h2`
+  (pasar `id` al componente `SectionHeading`).
+- Pestañas con roles `tablist/tab/tabpanel` + navegación por flechas (ya en `main.ts`).
+- Acordeón FAQ con `aria-expanded`/`aria-controls`; paneles animados por CSS con
+  `data-accordion`. El `js` en `<html>` lo pone `main.ts`: sin JS todo visible.
+- Menú móvil: `aria-expanded`, `aria-controls`, cierre con Escape.
+
+## Verificación antes de dar un cambio por terminado
+1. `npm run check` → **cero errores** (tipos estrictos: sin imports sin usar,
+   props tipadas, nada de `any` implícito).
+2. `npm run build` → compila y genera `dist/` sin avisos graves.
+3. Revisar a mano: contraste, foco visible con teclado, pestañas y acordeón.
+
+## Decisiones registradas
+- 2026-09-17: carta transcrita de las fotos oficiales del local a `src/data/menu.ts`.
+- 2026-09-17: las reseñas de `src/data/reviews.ts` son **ilustrativas**; sustituir por
+  reales antes de publicar (ver README).
+- 2026-09-17: dominio `https://nonosburgers.es` provisional; cambiar en
+  `astro.config.mjs`, `src/data/site.ts`, `public/robots.txt` y `public/sitemap.xml`.

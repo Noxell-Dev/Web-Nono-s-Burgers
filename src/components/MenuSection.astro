@@ -1,0 +1,92 @@
+---
+import { t } from '../i18n/es';
+import { site } from '../data/site';
+import { menuCategories } from '../data/menu';
+import SectionHeading from './SectionHeading.astro';
+---
+
+<section id="carta" class="bg-coal-900 py-20 sm:py-28" aria-labelledby="carta-heading">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <SectionHeading
+      id="carta-heading"
+      kicker={t.menu.kicker}
+      title={t.menu.title}
+      intro={t.menu.intro}
+    />
+
+    <div
+      role="tablist"
+      aria-label="Categorías de la carta"
+      class="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3"
+    >
+      {menuCategories.map((cat, i) => (
+        <button
+          type="button"
+          role="tab"
+          id={`tab-${cat.id}`}
+          aria-controls={`panel-${cat.id}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          tabindex={i === 0 ? 0 : -1}
+          class="menu-tab rounded-full px-5 py-2.5 text-sm"
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    {menuCategories.map((cat, i) => (
+      <div
+        role="tabpanel"
+        id={`panel-${cat.id}`}
+        aria-labelledby={`tab-${cat.id}`}
+        hidden={i !== 0}
+        class="mx-auto mt-8 max-w-3xl"
+      >
+        {cat.note && (
+          <p class="mb-6 text-center text-sm font-medium text-leaf-300">{cat.note}</p>
+        )}
+        <ul class="divide-y divide-white/10 rounded-2xl border border-white/10 bg-coal-950/60 px-6 sm:px-8">
+          {cat.items.map((item) => (
+            <li class="py-4">
+              <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <h3 class="font-display text-lg tracking-wide uppercase">{item.name}</h3>
+                {item.tag && (
+                  <span class="rounded-full bg-leaf-400/15 px-2.5 py-0.5 text-[11px] font-bold tracking-wide text-leaf-300 uppercase">
+                    {item.tag}
+                  </span>
+                )}
+                <span aria-hidden="true" class="mx-1 min-w-6 flex-1 -translate-y-1 border-b-2 border-dotted border-white/15"></span>
+                <span class="text-lg font-bold whitespace-nowrap text-yolk-400">{item.price}</span>
+              </div>
+              {item.description && (
+                <p class="mt-1 text-sm leading-relaxed text-white/55">{item.description}</p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <div class="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-2">
+      <div class="flex items-center gap-4 rounded-2xl border border-yolk-400/30 bg-yolk-400/10 p-5">
+        <span aria-hidden="true" class="font-display text-2xl text-yolk-400">2'90€</span>
+        <p class="text-sm leading-relaxed text-white/80">{t.menu.dealNote}</p>
+      </div>
+      <div class="flex items-center gap-4 rounded-2xl border border-leaf-400/30 bg-leaf-400/10 p-5">
+        <svg class="h-8 w-8 shrink-0 text-leaf-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="18.5" cy="17.5" r="3.5" />
+          <circle cx="5.5" cy="17.5" r="3.5" />
+          <circle cx="15" cy="5" r="1" />
+          <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
+        </svg>
+        <p class="text-sm leading-relaxed text-white/80">{t.menu.deliveryNote}</p>
+      </div>
+    </div>
+
+    <p class="mt-8 text-center">
+      <a href={site.phones[0].href} class="font-bold text-yolk-400 hover:underline">
+        ¿Dudas con la carta? Llámanos al {site.phones[0].display}
+      </a>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* Identidad visual de Nono's Burgers:
+   negro carbón + blanco, amarillo mostaza (CTAs y titulares)
+   y verde hoja (detalles secundarios). Tipografías: Anton para
+   titulares, Inter para cuerpo. */
+
+@theme {
+  --color-coal-950: #0a0a0b;
+  --color-coal-900: #141416;
+  --color-coal-800: #1e1e22;
+  --color-coal-700: #2c2c31;
+
+  --color-yolk-300: #ffd34d;
+  --color-yolk-400: #ffc21a;
+  --color-yolk-500: #eda200;
+
+  --color-leaf-300: #7ce8ab;
+  --color-leaf-400: #3ddc84;
+  --color-leaf-500: #23b567;
+
+  --font-display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-coal-950);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-yolk-400);
+  color: #0a0a0b;
+}
+
+/* Foco visible en todo lo interactivo */
+:focus-visible {
+  outline: 3px solid var(--color-yolk-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enlace "saltar al contenido" */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -6rem;
+  z-index: 100;
+  background: var(--color-yolk-400);
+  color: #0a0a0b;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Cabecera: fondo sólido al hacer scroll */
+#site-header {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  border-bottom: 1px solid transparent;
+}
+#site-header.is-scrolled {
+  background-color: rgb(10 10 11 / 0.94);
+  border-bottom-color: rgb(255 255 255 / 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* Pestañas de la carta: el estado lo marca aria-selected */
+.menu-tab {
+  border: 1px solid rgb(255 255 255 / 0.14);
+  color: rgb(255 255 255 / 0.75);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.menu-tab:hover {
+  border-color: var(--color-yolk-400);
+  color: #ffffff;
+}
+.menu-tab[aria-selected="true"] {
+  background-color: var(--color-yolk-400);
+  border-color: var(--color-yolk-400);
+  color: #0a0a0b;
+  font-weight: 700;
+}
+
+/* Acordeón FAQ: animación con grid (solo cuando hay JS) */
+html.js [data-accordion-panel] {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s ease;
+}
+html.js [data-accordion-panel] > div {
+  overflow: hidden;
+}
+html.js [data-accordion="open"] [data-accordion-panel] {
+  grid-template-rows: 1fr;
+}
+[data-accordion="open"] [data-accordion-icon] {
+  transform: rotate(45deg);
+}
+[data-accordion-icon] {
+  transition: transform 0.25s ease;
+}
+
+/* Marquesina decorativa */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+/* Respeto a movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
