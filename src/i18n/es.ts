@@ -19,7 +19,6 @@ export const t = {
   closeMenu: 'Cerrar menú de navegación',
 
   hero: {
-    kicker: 'Hamburguesería · Los Barrios (Cádiz)',
     titleStart: 'Hamburguesería en Los Barrios con',
     titleAccent: 'sabor de verdad',
     subtitle:
