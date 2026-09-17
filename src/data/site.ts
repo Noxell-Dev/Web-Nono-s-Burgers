@@ -55,7 +55,6 @@ export const site = {
       url: 'https://www.instagram.com/NONOS.BURGERSS',
     },
   ],
-  deliveryFee: '1,50 €',
   menuDeal: '2,90 €',
 } as const;
 
