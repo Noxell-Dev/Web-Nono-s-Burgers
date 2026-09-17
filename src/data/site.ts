@@ -31,6 +31,7 @@ export const site = {
     region: 'Cádiz',
     country: 'ES',
   },
+  email: 'nonos_burgers_@hotmail.com',
   mapsUrl:
     'https://www.google.com/maps/search/?api=1&query=Calle+Abulaga+1+Urb+El+Lazareto+11370+Los+Barrios+C%C3%A1diz',
   social: [

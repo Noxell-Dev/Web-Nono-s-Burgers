@@ -89,7 +89,7 @@ export const t = {
   gallery: {
     kicker: 'Fotos',
     title: "Así se ve Nono's",
-    intro: 'Nuestro local, nuestra carta y lo que sale de la plancha cada día.',
+    intro: 'Nuestro local y lo que sale de la plancha cada día.',
   },
 
   faq: {

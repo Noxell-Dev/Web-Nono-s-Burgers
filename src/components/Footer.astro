@@ -48,6 +48,9 @@ import SocialLinks from './SocialLinks.astro';
           </li>
         ))}
         <li>
+          <a href={`mailto:${site.email}`} class="break-all transition-colors hover:text-yolk-400">{site.email}</a>
+        </li>
+        <li>
           {site.address.street}, {site.address.postalCode} {site.address.locality} ({site.address.region})
         </li>
       </ul>
