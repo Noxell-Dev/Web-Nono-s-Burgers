@@ -47,7 +47,7 @@ export const site = {
     {
       label: 'Facebook',
       handle: 'NONOS_BURGERS',
-      url: 'https://www.facebook.com/NONOS_BURGERS',
+      url: 'https://www.facebook.com/profile.php?id=61557894326868',
     },
     {
       label: 'Instagram',
