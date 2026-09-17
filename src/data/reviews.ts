@@ -7,7 +7,6 @@ export interface Review {
   name: string;
   text: string;
   stars: number;
-  date: string;
 }
 
 export const reviews: Review[] = [
@@ -15,24 +14,20 @@ export const reviews: Review[] = [
     name: 'Ariadna Begué Sánchez',
     text: 'Se ha convertido, sin duda, en mi sitio favorito para pedir a domicilio. Aunque no sea un restaurante para ir a comer allí, la comida llega siempre muy buena. Se nota el cariño y la calidad que le ponen a cada plato. Totalmente recomendable, ¡un diez de diez!',
     stars: 5,
-    date: 'Hace 2 meses',
   },
   {
     name: 'Iván Cf2011',
     text: 'Excelente experiencia. Las hamburguesas están muy bien elaboradas, con ingredientes frescos y de calidad que se notan en cada bocado. La carne estaba jugosa y en su punto, el pan suave y los acompañamientos perfectamente equilibrados. Además, las patatas estaban crujientes',
     stars: 5,
-    date: 'Hace 3 meses',
   },
   {
     name: 'Manuco',
     text: 'Es una hamburguesería en la cual no importa el dinero que te gastes vas a salir satisfecho sin duda alguna. No hay hamburguesa alguna la cual no valga su precio y la de queso fundido es simplemente un espectáculo gastronómico el cual hay que experimentar al menos una vez en la vida.',
     stars: 5,
-    date: 'Hace una semana',
   },
   {
     name: 'karim mazouz martinez',
     text: 'Un sitio muy agradable para ir. Hamburguesas y bollos muy ricos, buen ambiente y trato cercano. ¡Repetiremos!',
     stars: 5,
-    date: 'Hace una semana',
   },
 ];
