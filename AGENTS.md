@@ -8,7 +8,7 @@
 
 ## Estructura (no mover piezas de sitio)
 - `src/components/` → componentes Astro (Header, Hero, MenuSection, Faq, Contact, Footer…).
-- `src/pages/` → `index.astro`, `aviso-legal.astro`, `privacidad.astro`. Nuevas páginas
+- `src/pages/` → `index.astro`, `aviso-legal.astro`. Nuevas páginas
   usan el componente `Layout` (SEO + cabecera + pie incluidos).
 - `src/data/` → contenido editable: `site.ts` (negocio), `menu.ts` (carta),
   `reviews.ts`, `faq.ts`, `gallery.ts`.
@@ -48,7 +48,10 @@
 
 ## Decisiones registradas
 - 2026-09-17: carta transcrita de las fotos oficiales del local a `src/data/menu.ts`.
-- 2026-09-17: las reseñas de `src/data/reviews.ts` son **ilustrativas**; sustituir por
-  reales antes de publicar (ver README).
+- 2026-09-17: reseñas reales de Google Maps (4,8/5, 146 reseñas) en
+  `src/data/reviews.ts`; la valoración agregada va en `site.googleRating`
+  (badge visible + `aggregateRating` en el JSON-LD).
+- 2026-09-17: página `/privacidad/` eliminada (la web no recoge datos ni usa
+  cookies); se mantiene `/aviso-legal/` (obligatorio según art. 10 LSSI).
 - 2026-09-17: dominio `https://nonosburgers.es` provisional; cambiar en
   `astro.config.mjs`, `src/data/site.ts`, `public/robots.txt` y `public/sitemap.xml`.

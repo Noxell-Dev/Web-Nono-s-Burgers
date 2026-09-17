@@ -118,9 +118,11 @@ export const t = {
     legalTitle: 'Legal',
     legal: [
       { label: 'Aviso legal', href: '/aviso-legal/' },
-      { label: 'Política de privacidad', href: '/privacidad/' },
     ],
     rights: "© 2026 Nono's Burgers · Los Barrios (Cádiz)",
+    creditText: 'Hecho con ♥ por',
+    creditName: 'noxell.dev',
+    creditUrl: 'https://noxell.dev',
   },
 
   legal: {

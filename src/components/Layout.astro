@@ -3,7 +3,6 @@ import { site } from '../data/site';
 import { t } from '../i18n/es';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import SpeedInsights from '@vercel/speed-insights/astro';
 import '../styles/global.css';
 
 interface Props {
@@ -68,6 +67,5 @@ const ogImage = new URL('/images/logo.jpg', site.url).toString();
     </main>
     <Footer />
     <script src="../scripts/main.ts"></script>
-    <SpeedInsights />
   </body>
 </html>

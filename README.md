@@ -55,7 +55,7 @@ public/
   favicon.svg               → Favicon
   images/                   → Logo y fotos del negocio
 src/
-  pages/      → Rutas: index.astro, aviso-legal.astro, privacidad.astro
+  pages/      → Rutas: index.astro, aviso-legal.astro
   components/ → Header, Hero, MenuSection, Faq, Contact, Footer…
   data/       → Contenido editable: site.ts, menu.ts, reviews.ts, faq.ts, gallery.ts
   i18n/       → Textos de la interfaz (es.ts)

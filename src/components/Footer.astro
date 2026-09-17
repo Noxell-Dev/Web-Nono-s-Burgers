@@ -68,6 +68,19 @@ import SocialLinks from './SocialLinks.astro';
   </div>
 
   <div class="border-t border-white/10">
-    <p class="mx-auto max-w-6xl px-4 py-6 text-sm text-white/50 sm:px-6">{t.footer.rights}</p>
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p>{t.footer.rights}</p>
+      <p>
+        {t.footer.creditText}{' '}
+        <a
+          href={t.footer.creditUrl}
+          target="_blank"
+          rel="noopener"
+          class="font-bold text-white/70 transition-colors hover:text-yolk-400"
+        >
+          {t.footer.creditName}
+        </a>
+      </p>
+    </div>
   </div>
 </footer>
