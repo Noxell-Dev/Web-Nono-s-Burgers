@@ -1,30 +1,38 @@
 /**
- * Reseñas de clientes.
- *
- * NOTA: son textos ilustrativos para el diseño inicial. Antes de publicar
- * la web, sustitúyelos por reseñas reales (p. ej. de Google) con el nombre
- * y el permiso de cada cliente.
+ * Reseñas reales de clientes, tomadas del perfil de Google Maps del
+ * negocio (4,8/5 con 146 reseñas a 17/09/2026). Si cambian, actualiza
+ * también `googleRating` en src/data/site.ts.
  */
 export interface Review {
   name: string;
   text: string;
   stars: number;
+  date: string;
 }
 
 export const reviews: Review[] = [
   {
-    name: 'María G.',
-    text: 'La smash burger es de las mejores que he probado en la zona. El pan brioche y la salsa secreta son otro nivel. Repetimos seguro.',
+    name: 'Ariadna Begué Sánchez',
+    text: 'Se ha convertido, sin duda, en mi sitio favorito para pedir a domicilio. Aunque no sea un restaurante para ir a comer allí, la comida llega siempre muy buena. Se nota el cariño y la calidad que le ponen a cada plato. Totalmente recomendable, ¡un diez de diez!',
     stars: 5,
+    date: 'Hace 2 meses',
   },
   {
-    name: 'Juan Antonio R.',
-    text: 'Pedimos a domicilio y llegó caliente y rápido. El bocadillo gigante da para dos personas. Calidad-precio imbatible en Los Barrios.',
+    name: 'Iván Cf2011',
+    text: 'Excelente experiencia. Las hamburguesas están muy bien elaboradas, con ingredientes frescos y de calidad que se notan en cada bocado. La carne estaba jugosa y en su punto, el pan suave y los acompañamientos perfectamente equilibrados. Además, las patatas estaban crujientes',
     stars: 5,
+    date: 'Hace 3 meses',
   },
   {
-    name: 'Lucía F.',
-    text: 'Las patatas con cheddar y bacon son un vicio, y el trato es de 10. Se ha convertido en nuestro sitio de confianza.',
+    name: 'Manuco',
+    text: 'Es una hamburguesería en la cual no importa el dinero que te gastes vas a salir satisfecho sin duda alguna. No hay hamburguesa alguna la cual no valga su precio y la de queso fundido es simplemente un espectáculo gastronómico el cual hay que experimentar al menos una vez en la vida.',
     stars: 5,
+    date: 'Hace una semana',
+  },
+  {
+    name: 'karim mazouz martinez',
+    text: 'Un sitio muy agradable para ir. Hamburguesas y bollos muy ricos, buen ambiente y trato cercano. ¡Repetiremos!',
+    stars: 5,
+    date: 'Hace una semana',
   },
 ];

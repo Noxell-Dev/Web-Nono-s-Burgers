@@ -83,6 +83,7 @@ export const t = {
     kicker: 'Reseñas',
     title: 'Lo que dice el barrio',
     intro: 'La mejor publicidad es la de quien ya ha probado nuestras burgers.',
+    googleLabel: 'reseñas en Google',
   },
 
   gallery: {

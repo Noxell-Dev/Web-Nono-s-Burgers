@@ -23,6 +23,11 @@ const restaurantJsonLd = {
   priceRange: '€',
   telephone: '+34604111318',
   url: site.url,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: site.googleRating.value.toString(),
+    reviewCount: site.googleRating.reviewCount.toString(),
+  },
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.address.street,

@@ -1,11 +1,14 @@
 ---
 import { t } from '../i18n/es';
 import { reviews } from '../data/reviews';
+import { site } from '../data/site';
 import SectionHeading from './SectionHeading.astro';
 
 function stars(count: number): number[] {
   return Array.from({ length: count }, (_, i) => i);
 }
+
+const ratingDisplay = site.googleRating.value.toFixed(1).replace('.', ',');
 ---
 
 <section id="resenas" aria-labelledby="resenas-heading" class="py-20 sm:py-28">
@@ -16,7 +19,20 @@ function stars(count: number): number[] {
       title={t.reviews.title}
       intro={t.reviews.intro}
     />
-    <div class="mt-12 grid gap-6 md:grid-cols-3">
+    <div class="mt-8 flex justify-center">
+      <a
+        href={site.mapsUrl}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-coal-900 px-5 py-2.5 font-bold transition-colors hover:border-yolk-400/60"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-yolk-400" aria-hidden="true">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+        </svg>
+        <span>{ratingDisplay} · {site.googleRating.reviewCount} {t.reviews.googleLabel}</span>
+      </a>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
       {reviews.map((review) => (
         <figure class="flex flex-col rounded-2xl border border-white/10 bg-coal-900 p-7">
           <div class="mb-4 flex gap-1" role="img" aria-label={`${review.stars} de 5 estrellas`}>
@@ -33,7 +49,10 @@ function stars(count: number): number[] {
             <span aria-hidden="true" class="flex h-10 w-10 items-center justify-center rounded-full bg-leaf-400/15 font-display text-lg text-leaf-300">
               {review.name.charAt(0)}
             </span>
-            <span class="font-bold">{review.name}</span>
+            <span>
+              <span class="block font-bold">{review.name}</span>
+              <span class="block text-sm text-white/50">{review.date} · Google</span>
+            </span>
           </figcaption>
         </figure>
       ))}

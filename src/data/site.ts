@@ -25,7 +25,7 @@ export const site = {
     },
   ],
   address: {
-    street: 'C/ Abulaga, 1, Urb. El Lazareto',
+    street: 'C/ La Carrasca',
     postalCode: '11370',
     locality: 'Los Barrios',
     region: 'Cádiz',
@@ -33,7 +33,11 @@ export const site = {
   },
   email: 'nonos_burgers_@hotmail.com',
   mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Calle+Abulaga+1+Urb+El+Lazareto+11370+Los+Barrios+C%C3%A1diz',
+    'https://www.google.com/maps/place/Nono%C2%B4s+Burgers/@36.1871414,-5.4998117,17z/data=!4m8!3m7!1s0xd0ced6989c09e73:0x74f82cca34354da8!8m2!3d36.1871371!4d-5.4972368!9m1!1b1!16s%2Fg%2F11vx5lbwcq?entry=ttu&g_ep=EgoyMDI2MDkxNC4wIKXMDSoASAFQAw%3D%3D',
+  googleRating: {
+    value: 4.8,
+    reviewCount: 146,
+  },
   social: [
     {
       label: 'TikTok',
