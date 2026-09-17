@@ -63,7 +63,7 @@ export const t = {
       {
         icon: 'bike',
         title: 'A domicilio por 1,50 €',
-        text: 'Llámanos o escríbenos por WhatsApp y te lo llevamos caliente a casa, en Los Barrios y alrededores.',
+        text: 'Llámanos y te lo llevamos caliente a casa, en Los Barrios y alrededores.',
         linkLabel: 'Pedir ahora',
         linkHref: '#contacto',
       },
@@ -102,9 +102,8 @@ export const t = {
     kicker: 'Contacto',
     title: '¿Hambre? Pide ahora',
     intro:
-      'Llámanos o escríbenos por WhatsApp y lo tienes en camino. Recogida en local o domicilio por 1,50 €.',
+      'Llámanos y lo tienes en camino. Recogida en local o domicilio por 1,50 €.',
     callLabel: 'Llamar',
-    whatsappLabel: 'WhatsApp',
     addressTitle: 'Dónde estamos',
     addressMapsLabel: 'Cómo llegar',
     socialTitle: 'Síguenos',

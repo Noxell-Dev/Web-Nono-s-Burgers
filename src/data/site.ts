@@ -14,14 +14,10 @@ export const site = {
     {
       display: '+34 604 11 13 18',
       href: 'tel:+34604111318',
-      whatsapp:
-        'https://wa.me/34604111318?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Nono%27s%20Burgers',
     },
     {
       display: '+34 623 36 29 57',
       href: 'tel:+34623362957',
-      whatsapp:
-        'https://wa.me/34623362957?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Nono%27s%20Burgers',
     },
   ],
   address: {

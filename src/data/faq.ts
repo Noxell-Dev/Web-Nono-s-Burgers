@@ -11,7 +11,7 @@ export const faqs: FaqItem[] = [
   {
     question: '¿Hacéis reparto a domicilio?',
     answer:
-      'Sí. Llevamos tu pedido a casa por 1,50 €. Llámanos al 604 11 13 18 o al 623 36 29 57, o escríbenos por WhatsApp, y te lo preparamos al momento para que llegue caliente.',
+      'Sí. Llevamos tu pedido a casa por 1,50 €. Llámanos al 604 11 13 18 o al 623 36 29 57 y te lo preparamos al momento para que llegue caliente.',
   },
   {
     question: '¿Tenéis opciones sin gluten?',
