@@ -12,9 +12,9 @@ import SectionHeading from './SectionHeading.astro';
       title={t.gallery.title}
       intro={t.gallery.intro}
     />
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-12 columns-2 gap-4 lg:columns-4">
       {galleryImages.map((image) => (
-        <figure class="group overflow-hidden rounded-2xl border border-white/10 bg-coal-950">
+        <figure class="group mb-4 overflow-hidden rounded-2xl border border-white/10 bg-coal-950 break-inside-avoid">
           <img
             src={image.src}
             width={image.width}
