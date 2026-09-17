@@ -12,19 +12,67 @@ import SectionHeading from './SectionHeading.astro';
       title={t.gallery.title}
       intro={t.gallery.intro}
     />
-    <div class="mt-12 columns-2 gap-4 lg:columns-4">
-      {galleryImages.map((image) => (
-        <figure class="group mb-4 overflow-hidden rounded-2xl border border-white/10 bg-coal-950 break-inside-avoid">
-          <img
-            src={image.src}
-            width={image.width}
-            height={image.height}
-            alt={image.alt}
-            loading="lazy"
-            class="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+    <div
+      data-carousel
+      role="region"
+      aria-roledescription="carrusel"
+      aria-label={t.gallery.title}
+      tabindex="0"
+      class="relative mt-12 rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-yolk-400/60"
+    >
+      <div
+        data-carousel-track
+        class="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {galleryImages.map((image, index) => (
+          <figure
+            class="flex w-full shrink-0 snap-center items-center justify-center"
+            aria-roledescription="diapositiva"
+            aria-label={`${index + 1} de ${galleryImages.length}`}
+          >
+            <img
+              src={image.src}
+              width={image.width}
+              height={image.height}
+              alt={image.alt}
+              loading="lazy"
+              class="max-h-[62vh] w-auto max-w-full rounded-2xl border border-white/10 object-contain sm:max-h-[68vh]"
+            />
+          </figure>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        data-carousel-prev
+        aria-label="Foto anterior"
+        class="absolute top-1/2 left-3 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white backdrop-blur transition-colors hover:bg-yolk-400 hover:text-coal-950 sm:left-5"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        data-carousel-next
+        aria-label="Foto siguiente"
+        class="absolute top-1/2 right-3 -translate-y-1/2 rounded-full bg-black/60 p-3 text-white backdrop-blur transition-colors hover:bg-yolk-400 hover:text-coal-950 sm:right-5"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+
+      <div data-carousel-dots class="mt-6 flex justify-center gap-2.5">
+        {galleryImages.map((_, index) => (
+          <button
+            type="button"
+            data-carousel-dot={index}
+            aria-label={`Ir a la foto ${index + 1}`}
+            class="h-2.5 w-2.5 rounded-full bg-white/20 transition-colors hover:bg-white/50"
           />
-        </figure>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>
