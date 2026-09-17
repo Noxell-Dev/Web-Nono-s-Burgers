@@ -35,4 +35,16 @@ export const galleryImages: GalleryImage[] = [
     height: 1199,
     alt: 'Hamburguesa con bacon, nachos, guacamole y cebolla caramelizada',
   },
+  {
+    src: '/images/croquetas.jpg',
+    width: 900,
+    height: 1162,
+    alt: 'Croquetas caseras con patatas fritas y virutas de jamón',
+  },
+  {
+    src: '/images/burger-bacon.jpg',
+    width: 900,
+    height: 900,
+    alt: 'Hamburguesa con bacon crujiente, queso fundido, tomate y salsa',
+  },
 ];
