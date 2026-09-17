@@ -12,6 +12,12 @@ export interface GalleryImage {
 
 export const galleryImages: GalleryImage[] = [
   {
+    src: '/images/burger-nachos.jpg',
+    width: 900,
+    height: 1199,
+    alt: 'Hamburguesa con bacon, nachos, guacamole y cebolla caramelizada',
+  },
+  {
     src: '/images/burger-mano.jpg',
     width: 418,
     height: 478,
@@ -28,12 +34,6 @@ export const galleryImages: GalleryImage[] = [
     width: 900,
     height: 1200,
     alt: 'Fingers de pollo crujientes con patatas fritas y salsas',
-  },
-  {
-    src: '/images/burger-nachos.jpg',
-    width: 900,
-    height: 1199,
-    alt: 'Hamburguesa con bacon, nachos, guacamole y cebolla caramelizada',
   },
   {
     src: '/images/croquetas.jpg',
