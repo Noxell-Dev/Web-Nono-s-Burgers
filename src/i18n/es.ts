@@ -22,7 +22,7 @@ export const t = {
     titleStart: 'Hamburguesería en Los Barrios con',
     titleAccent: 'sabor de verdad',
     subtitle:
-      'Smash burgers, bocadillos y entrantes caseros a precio de barrio. Pide por teléfono y recógelo caliente, o te lo llevamos a casa.',
+      'Smash burgers, bocadillos y entrantes caseros a precio honesto. Pide por teléfono y recógelo caliente, o te lo llevamos a casa.',
     primaryCta: 'Ver la carta',
     primaryCtaHref: '#carta',
     secondaryCta: 'Llamar: 604 11 13 18',
@@ -46,7 +46,7 @@ export const t = {
     kicker: 'Qué ofrecemos',
     title: 'Todo lo bueno, sin complicaciones',
     intro:
-      'Tres motivos por los que el barrio repite: carta amplia, precio justo y trato de casa.',
+      'Tres motivos por los que la gente repite: carta amplia, precio justo y trato de casa.',
     items: [
       {
         icon: 'menu',
@@ -81,7 +81,7 @@ export const t = {
 
   reviews: {
     kicker: 'Reseñas',
-    title: 'Lo que dice el barrio',
+    title: 'Lo que dicen nuestros clientes',
     intro: 'La mejor publicidad es la de quien ya ha probado nuestras burgers.',
     googleLabel: 'reseñas en Google',
   },
@@ -94,7 +94,7 @@ export const t = {
 
   faq: {
     kicker: 'Preguntas frecuentes',
-    title: 'Dudas de barrio, resueltas',
+    title: 'Dudas frecuentes, resueltas',
     intro: 'Lo que nos preguntan todos los días, contestado sin rodeos.',
   },
 
@@ -111,7 +111,7 @@ export const t = {
 
   footer: {
     tagline:
-      'Hamburguesería de barrio en Los Barrios (Cádiz). Sabor casero, precio justo.',
+      'Hamburguesería en Los Barrios (Cádiz). Sabor casero, precio justo.',
     navTitle: 'Navegación',
     contactTitle: 'Contacto',
     legalTitle: 'Legal',
