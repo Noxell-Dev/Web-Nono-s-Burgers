@@ -18,7 +18,10 @@
   de cabecera). Se carga desde `Layout` con `<script src="../scripts/main.ts">`.
 - `src/styles/global.css` → Tailwind + tokens `@theme` + estilos de estado
   (`aria-selected`, acordeón, marquesina, foco visible).
-- `public/` → `robots.txt`, `sitemap.xml`, `favicon.svg`, `images/` (assets tal cual).
+- `public/` → `robots.txt`, `site.webmanifest`, `favicon.svg` e iconos del
+  manifiesto en la raíz; imágenes en `public/images/`. El `sitemap-index.xml`
+  lo genera automáticamente la integración `@astrojs/sitemap` en cada build
+  (no hay `sitemap.xml` manual).
 
 ## Idiomas y textos
 - Solo `es`. Si algún día se añade inglés: español en `/`, inglés en `/en/`
