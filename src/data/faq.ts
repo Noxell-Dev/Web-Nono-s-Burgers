@@ -16,7 +16,7 @@ export const faqs: FaqItem[] = [
   {
     question: '¿Tenéis opciones sin gluten?',
     answer:
-      'En los bocadillos puedes pedir pan sin gluten por 3 € más. Si tienes alergia o intolerancia, avísanos al hacer el pedido y lo preparamos con cuidado.',
+      'En los bocadillos puedes pedir pan sin gluten por 3 € más. Si tienes alguna alergia o intolerancia, avísanos antes de hacer el pedido.',
   },
   {
     question: "¿Qué es el «Hazlo menú»?",
