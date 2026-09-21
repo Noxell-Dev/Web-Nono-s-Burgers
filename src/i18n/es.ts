@@ -10,11 +10,11 @@ export const t = {
   siteName: "Nono's Burgers",
 
   nav: [
-    { label: 'La carta', href: '#carta' },
-    { label: 'Reseñas', href: '#resenas' },
-    { label: 'Fotos', href: '#fotos' },
-    { label: 'Preguntas', href: '#faq' },
-    { label: 'Contacto', href: '#contacto' },
+    { label: 'La carta', href: '/#carta' },
+    { label: 'Reseñas', href: '/#resenas' },
+    { label: 'Fotos', href: '/#fotos' },
+    { label: 'Preguntas', href: '/#faq' },
+    { label: 'Contacto', href: '/#contacto' },
   ],
   callCta: 'Llamar para pedir',
   openMenu: 'Abrir menú de navegación',
