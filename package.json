@@ -1,7 +1,7 @@
 {
     "dependencies": {
         "@astrojs/sitemap": "^3.7.4",
-        "astro": "^7.3.2"
+        "astro": "^7.3.3"
     },
     "description": "Landing page de Nono's Burgers, hamburguesería en Los Barrios (Cádiz).",
     "devDependencies": {
