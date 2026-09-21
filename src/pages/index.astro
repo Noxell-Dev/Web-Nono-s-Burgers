@@ -31,12 +31,12 @@ const faqJsonLd = {
   path="/"
   jsonLd={[faqJsonLd]}
 >
-  <Hero />
-  <Marquee />
-  <Highlights />
-  <MenuSection />
-  <Reviews />
-  <Gallery />
-  <Faq />
-  <Contact />
+  <div class="reveal"><Hero /></div>
+  <div class="reveal"><Marquee /></div>
+  <div class="reveal"><Highlights /></div>
+  <div class="reveal"><MenuSection /></div>
+  <div class="reveal" style="--reveal-delay:60ms"><Reviews /></div>
+  <div class="reveal" style="--reveal-delay:120ms"><Gallery /></div>
+  <div class="reveal" style="--reveal-delay:180ms"><Faq /></div>
+  <div class="reveal"><Contact /></div>
 </BaseLayout>

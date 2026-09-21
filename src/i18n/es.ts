@@ -4,7 +4,9 @@
  * galería) vive en src/data/.
  */
 export const t = {
-  skipLink: 'Saltar al contenido principal',
+  a11y: {
+    skipLink: 'Saltar al contenido principal',
+  },
   siteName: "Nono's Burgers",
 
   nav: [
@@ -125,6 +127,12 @@ export const t = {
   },
 
   legal: {
+    backHome: 'Volver al inicio',
+  },
+
+  e404: {
+    title: 'Página no encontrada',
+    message: 'La página que buscas no existe o se ha movido.',
     backHome: 'Volver al inicio',
   },
 } as const;

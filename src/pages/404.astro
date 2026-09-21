@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/es';
+
+const title = `${t.e404.title} | ${t.siteName}`;
+const description = t.e404.message;
+---
+
+<BaseLayout title={title} description={description} path="/404/">
+  <div class="mx-auto max-w-2xl px-6 py-24 text-center">
+    <p class="font-display text-7xl text-[var(--color-yolk-400)]" aria-hidden="true">404</p>
+    <h1 class="font-display mt-4 text-4xl">{t.e404.title}</h1>
+    <p class="mt-4 text-lg text-white/70">{t.e404.message}</p>
+    <a
+      href="/"
+      class="mt-8 inline-block rounded-xl bg-[var(--color-yolk-400)] px-6 py-3 font-bold text-[#0a0a0b]"
+    >
+      {t.e404.backHome}
+    </a>
+  </div>
+</BaseLayout>

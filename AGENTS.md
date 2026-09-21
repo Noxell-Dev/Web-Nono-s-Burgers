@@ -1,7 +1,7 @@
 # AGENTS.md — Convenciones del proyecto Nono's Burgers
 
 ## Stack
-- **Astro 5** + **TypeScript estricto** (`astro/tsconfigs/strict`) + **Tailwind CSS v4**
+- **Astro 7** + **TypeScript estricto** (`astro/tsconfigs/strict`) + **Tailwind CSS v4**
   (vía `@tailwindcss/vite` en `astro.config.mjs`; sin `tailwind.config`, los tokens
   viven en `@theme` dentro de `src/styles/global.css`).
 - Contenido 100 % estático, sin backend. Un solo idioma: **español**.
@@ -17,11 +17,13 @@
   `reviews.ts`, `faq.ts`, `gallery.ts`.
 - `src/i18n/es.ts` → **todos** los textos de la interfaz. Prohibido hardcodear copy
   en los componentes; el contenido largo vive en `src/data/`.
-- `src/scripts/main.ts` → único JS de cliente (menú móvil, pestañas, acordeón, scroll
-  de cabecera). Se carga desde `BaseLayout` con `<script src="../scripts/main.ts">`.
+- `src/scripts/main.ts` → menú móvil, pestañas, acordeón, scroll de cabecera.
+  `src/scripts/reveal.ts` → animación de entrada al hacer scroll (punto 11 del
+  prompt; idéntico en las tres webs). Ambos se cargan desde `BaseLayout` con
+  `<script src="../scripts/...">`.
 - `src/styles/global.css` → Tailwind + tokens `@theme` + estilos de estado
   (`aria-selected`, acordeón, marquesina, foco visible).
-- `public/` → `robots.txt`, `site.webmanifest`, `favicon.svg` e iconos del
+- `public/` → `site.webmanifest`, `favicon.svg` e iconos del
   manifiesto en la raíz; imágenes en `public/images/`. El `sitemap-index.xml`
   lo genera automáticamente la integración `@astrojs/sitemap` en cada build
   (no hay `sitemap.xml` manual).
@@ -60,4 +62,4 @@
 - 2026-09-17: página `/privacidad/` eliminada (la web no recoge datos ni usa
   cookies); se mantiene `/aviso-legal/` (obligatorio según art. 10 LSSI).
 - 2026-09-17: dominio `https://nonosburgers.es` provisional; cambiar en
-  `astro.config.mjs`, `src/data/site.ts`, `public/robots.txt` y `public/sitemap.xml`.
+  `astro.config.mjs` y `src/data/site.ts`.

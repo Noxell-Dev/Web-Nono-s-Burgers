@@ -1,7 +1,6 @@
 /**
  * Datos globales del negocio. Si cambia el dominio, el teléfono o la
- * dirección, este es el único fichero que hay que tocar (además de
- * public/sitemap.xml y public/robots.txt).
+ * dirección, este es el único fichero que hay que tocar.
  */
 export const site = {
   name: "Nono's Burgers",
