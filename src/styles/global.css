@@ -65,7 +65,7 @@ body {
   top: 1rem;
 }
 
-/* Punto 11 del prompt: entrada al hacer scroll (una sola variante).
+/* Entrada al hacer scroll (una sola variante).
    La activa src/scripts/reveal.ts con IntersectionObserver. */
 .reveal {
   transition:

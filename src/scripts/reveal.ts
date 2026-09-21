@@ -1,5 +1,5 @@
 /**
- * Punto 11 del prompt: animaciones sutiles, rápidas y accesibles.
+ * Animaciones de entrada al hacer scroll.
  * - Entrada al hacer scroll: `.reveal` (fade + translateY 12px), una sola
  *   variante en toda la página, con IntersectionObserver nativo.
  * - Stagger en parrillas: `--reveal-delay` en línea (60 ms por elemento).

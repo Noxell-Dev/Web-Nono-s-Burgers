@@ -18,8 +18,8 @@
 - `src/i18n/es.ts` → **todos** los textos de la interfaz. Prohibido hardcodear copy
   en los componentes; el contenido largo vive en `src/data/`.
 - `src/scripts/main.ts` → menú móvil, pestañas, acordeón, scroll de cabecera.
-  `src/scripts/reveal.ts` → animación de entrada al hacer scroll (punto 11 del
-  prompt; idéntico en las tres webs). Ambos se cargan desde `BaseLayout` con
+  `src/scripts/reveal.ts` → animación de entrada al hacer scroll (estándar noxell.dev,
+  idéntico en las tres webs). Ambos se cargan desde `BaseLayout` con
   `<script src="../scripts/...">`.
 - `src/styles/global.css` → Tailwind + tokens `@theme` + estilos de estado
   (`aria-selected`, acordeón, marquesina, foco visible).
