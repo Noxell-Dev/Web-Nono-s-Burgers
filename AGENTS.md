@@ -8,14 +8,17 @@
 
 ## Estructura (no mover piezas de sitio)
 - `src/components/` → componentes Astro (Header, Hero, MenuSection, Faq, Contact, Footer…).
+- `src/layouts/BaseLayout.astro` → `<head>` completo (SEO, OG/Twitter, canonical,
+  JSON-LD `Restaurant`), slots de cabecera/contenido/pie. Mismo esqueleto que en
+  las otras webs de noxell.dev; los datos salen de `src/data/site.ts`.
 - `src/pages/` → `index.astro`, `aviso-legal.astro`. Nuevas páginas
-  usan el componente `Layout` (SEO + cabecera + pie incluidos).
+  usan el componente `BaseLayout` (`src/layouts/BaseLayout.astro`: SEO + cabecera + pie incluidos).
 - `src/data/` → contenido editable: `site.ts` (negocio), `menu.ts` (carta),
   `reviews.ts`, `faq.ts`, `gallery.ts`.
 - `src/i18n/es.ts` → **todos** los textos de la interfaz. Prohibido hardcodear copy
   en los componentes; el contenido largo vive en `src/data/`.
 - `src/scripts/main.ts` → único JS de cliente (menú móvil, pestañas, acordeón, scroll
-  de cabecera). Se carga desde `Layout` con `<script src="../scripts/main.ts">`.
+  de cabecera). Se carga desde `BaseLayout` con `<script src="../scripts/main.ts">`.
 - `src/styles/global.css` → Tailwind + tokens `@theme` + estilos de estado
   (`aria-selected`, acordeón, marquesina, foco visible).
 - `public/` → `robots.txt`, `site.webmanifest`, `favicon.svg` e iconos del

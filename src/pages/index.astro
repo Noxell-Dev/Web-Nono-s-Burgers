@@ -1,5 +1,5 @@
 ---
-import Layout from '../components/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Marquee from '../components/Marquee.astro';
 import Highlights from '../components/Highlights.astro';
@@ -14,31 +14,6 @@ import { faqs } from '../data/faq';
 const title = "Nono's Burgers | Hamburguesería en Los Barrios, Cádiz";
 const description = site.description;
 
-const restaurantJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Restaurant',
-  name: site.name,
-  image: new URL('/images/logo.jpg', site.url).toString(),
-  servesCuisine: ['Hamburguesas', 'Bocadillos', 'Comida rápida'],
-  priceRange: '€',
-  telephone: '+34604111318',
-  url: site.url,
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: site.googleRating.value.toString(),
-    reviewCount: site.googleRating.reviewCount.toString(),
-  },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: site.address.street,
-    postalCode: site.address.postalCode,
-    addressLocality: site.address.locality,
-    addressRegion: site.address.region,
-    addressCountry: site.address.country,
-  },
-  sameAs: site.social.map((s) => s.url),
-};
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -50,11 +25,11 @@ const faqJsonLd = {
 };
 ---
 
-<Layout
+<BaseLayout
   title={title}
   description={description}
   path="/"
-  jsonLd={[restaurantJsonLd, faqJsonLd]}
+  jsonLd={[faqJsonLd]}
 >
   <Hero />
   <Marquee />
@@ -64,4 +39,4 @@ const faqJsonLd = {
   <Gallery />
   <Faq />
   <Contact />
-</Layout>
+</BaseLayout>

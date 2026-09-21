@@ -1,5 +1,5 @@
 ---
-import Layout from '../components/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { t } from '../i18n/es';
 import { site } from '../data/site';
 
@@ -7,7 +7,7 @@ const title = `Aviso legal | ${site.name}`;
 const description = `Aviso legal de ${site.name}, hamburguesería en Los Barrios (Cádiz). Datos del titular y condiciones de uso de la web.`;
 ---
 
-<Layout title={title} description={description} path="/aviso-legal/">
+<BaseLayout title={title} description={description} path="/aviso-legal/">
   <section class="pt-28 pb-20 sm:pt-36">
     <div class="mx-auto max-w-3xl px-4 sm:px-6">
       <a href="/" class="mb-8 inline-flex items-center gap-2 font-bold text-yolk-400 hover:underline">
@@ -69,4 +69,4 @@ const description = `Aviso legal de ${site.name}, hamburguesería en Los Barrios
       </div>
     </div>
   </section>
-</Layout>
+</BaseLayout>

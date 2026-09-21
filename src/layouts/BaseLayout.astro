@@ -10,13 +10,39 @@ interface Props {
   description: string;
   /** Ruta de la página (para el canonical). Por defecto "/". */
   path?: string;
-  /** Objetos JSON-LD que se inyectan en el <head>. */
+  /** Objetos JSON-LD extra que se inyectan en el <head> (p. ej. FAQ visible de la página). */
   jsonLd?: Record<string, unknown>[];
 }
 
 const { title, description, path = '/', jsonLd = [] } = Astro.props;
 const canonical = new URL(path, site.url).toString();
 const ogImage = new URL('/images/logo.jpg', site.url).toString();
+const ogImageAlt = t.hero.logoAlt;
+
+const restaurantJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  name: site.name,
+  image: ogImage,
+  servesCuisine: ['Hamburguesas', 'Bocadillos', 'Comida rápida'],
+  priceRange: '€',
+  telephone: site.phones[0].href.replace('tel:', ''),
+  url: site.url,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: site.googleRating.value.toString(),
+    reviewCount: site.googleRating.reviewCount.toString(),
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    postalCode: site.address.postalCode,
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    addressCountry: site.address.country,
+  },
+  sameAs: site.social.map((s) => s.url),
+};
 ---
 
 <!doctype html>
@@ -27,26 +53,41 @@ const ogImage = new URL('/images/logo.jpg', site.url).toString();
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0a0a0b" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    {/* Open Graph */}
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content={site.locale} />
     <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={site.locale} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:alt" content={t.hero.logoAlt} />
+    <meta property="og:image:alt" content={ogImageAlt} />
 
-    {/* Twitter Card */}
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content={t.hero.logoAlt} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(restaurantJsonLd)}
+    />
+    {jsonLd.map((obj) => (
+      <script type="application/ld+json" set:html={JSON.stringify(obj)} />
+    ))}
 
     {/* Tipografías: Anton (titulares) + Inter (cuerpo) */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,10 +96,6 @@ const ogImage = new URL('/images/logo.jpg', site.url).toString();
       href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    {jsonLd.map((obj) => (
-      <script type="application/ld+json" set:html={JSON.stringify(obj)} />
-    ))}
   </head>
   <body>
     <a class="skip-link" href="#contenido">{t.skipLink}</a>
