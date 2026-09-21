@@ -22,7 +22,7 @@ const description = `Aviso legal de ${site.name}, hamburguesería en Los Barrios
           <h2 class="mb-2 font-display text-xl tracking-wide text-white uppercase">1. Datos del titular</h2>
           <p>
             Esta web pertenece a {site.name}, con domicilio en {site.address.street},
-            {` ${site.address.postalCode} ${site.address.locality} (${site.address.region})`}
+            {` ${site.address.postalCode} ${site.address.locality} (${site.address.region})`}{' '}
             y teléfonos de contacto {site.phones.map((p) => p.display).join(' y ')}.
           </p>
         </section>
