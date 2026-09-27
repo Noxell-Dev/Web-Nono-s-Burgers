@@ -32,7 +32,7 @@ export const t = {
     dealTitle: 'Hazlo menú',
     dealText: 'Bebida + patatas por 2,90 €',
     logoAlt:
-      "Logotipo de Nono's Burgers: un oso con sombrero comiendo una hamburguesa",
+      "Logotipo de Nono's Burgers: un oso con sombrero comiendo un bocadillo",
   },
 
   marquee: [
