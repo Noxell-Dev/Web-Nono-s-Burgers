@@ -12,39 +12,21 @@ export interface GalleryImage {
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: '/images/burger-nachos.jpg',
-    width: 900,
-    height: 1199,
-    alt: 'Hamburguesa con bacon, nachos, guacamole y cebolla caramelizada',
-  },
-  {
-    src: '/images/burger-mano.jpg',
-    width: 418,
-    height: 478,
-    alt: "Hamburguesa de Nono's Burgers con pan brioche, carne a la brasa y salsa, sujetada con un guante negro",
-  },
-  {
-    src: '/images/local.jpg',
-    width: 1280,
-    height: 853,
-    alt: "Fachada del local de Nono's Burgers en Los Barrios con clientes en la puerta",
-  },
-  {
-    src: '/images/fingers-pollo.jpg',
-    width: 900,
+    src: '/images/bocadillo-pollo-cebolla.webp',
+    width: 1600,
     height: 1200,
-    alt: 'Fingers de pollo crujientes con patatas fritas y salsas',
+    alt: 'Bocadillo de pollo desmechado con cebolla caramelizada y alioli, acompañado de lechuga',
   },
   {
-    src: '/images/croquetas.jpg',
-    width: 900,
-    height: 1162,
-    alt: 'Croquetas caseras con patatas fritas y virutas de jamón',
+    src: '/images/pollo-gratinado-queso.webp',
+    width: 1600,
+    height: 1200,
+    alt: 'Pollo gratinado con queso fundido, servido en bandeja de aluminio',
   },
   {
-    src: '/images/burger-bacon.jpg',
-    width: 900,
-    height: 900,
-    alt: 'Hamburguesa con bacon crujiente, queso fundido, tomate y salsa',
+    src: '/images/sandwich-pollo-huevo.webp',
+    width: 1600,
+    height: 1200,
+    alt: 'Sándwich de pollo con huevo, queso fundido y salsas, acompañado de patatas fritas',
   },
 ];
